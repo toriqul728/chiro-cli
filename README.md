@@ -13,6 +13,11 @@ A minimal terminal-based tracker for anime, manga, TV shows, and movies.
 
 ---
 
+## Screenshot
+![chiro screenshot](assets/screenshot.png)
+
+---
+
 ## Features
 
 - Track **anime**, **manga**, **TV shows**, and **movies** in separate lists
