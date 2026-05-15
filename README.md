@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/chiro.git
+git clone https://github.com/toriqul728/chiro-cli
 cd chiro
 ```
 
