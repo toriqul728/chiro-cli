@@ -1,14 +1,18 @@
+
 # chiro
 
 A minimal terminal-based tracker for anime, manga, TV shows, and movies.
 
+
 ```
+
  ██████╗██╗  ██╗██╗██████╗  ██████╗
 ██╔════╝██║  ██║██║██╔══██╗██╔═══██╗
 ██║     ███████║██║██████╔╝██║   ██║
 ██║     ██╔══██║██║██╔══██╗██║   ██║
 ╚██████╗██║  ██║██║██║  ██║╚██████╔╝
  ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝ ╚═════╝
+
 ```
 
 ---
@@ -36,7 +40,8 @@ A minimal terminal-based tracker for anime, manga, TV shows, and movies.
 - `requests` library
 
 ```bash
-pip install -r requirements.txt
+pip install requests
+
 ```
 
 ---
@@ -46,87 +51,83 @@ pip install -r requirements.txt
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/toriqul728/chiro-cli
+git clone [https://github.com/toriqul728/chiro-cli](https://github.com/toriqul728/chiro-cli)
 cd chiro-cli
+
 ```
 
-### 2. Install dependencies
+### 2. (Optional) Make it executable
 
 ```bash
-pip install -r requirements.txt
+chmod +x chiro.py
+ln -s chiro.py chiro
+
 ```
 
-### 3. (Optional) Make it executable
+### 3. Set up your TMDB API key (for TV & Movies)
 
-```bash
-chmod +x chiro-cli.py
-ln -s chiro-cli.py chiro
-```
+Get a free API key at [themoviedb.org](https://www.themoviedb.org/), then add it to chiro by running `python3 chiro_live.py tv` or `python3 chiro_live.py movie`.
 
-### 4. Set up your TMDB API key (for TV & Movies)
-
-Get a free API key at [themoviedb.org → Settings → API](https://www.themoviedb.org/settings/api), then add it to `~/.chiro/config.json`:
-
-```json
-{
-    "tmdb_key": "your_api_key_here"
-}
-```
-
-This file is created automatically on first run. Anime and manga work without any API key.
+The configuration file is created automatically on your first run. Anime and manga tracking work completely out of the box without an API key.
 
 ---
 
 ## Usage
 
 ```bash
-python3 chiro-cli.py <category>
+python3 chiro.py <category>
+
 ```
 
-Categories: `anime`, `manga`, `tv`, `movies`
+Categories: `anime`, `manga`, `tv`, `movie`
 
 ### Commands
 
-| Command  | Description                                      |
-|----------|--------------------------------------------------|
-| `list`   | Show all entries sorted alphabetically           |
-| `add`    | Search and add a new entry                       |
-| `update` | Update progress, status, or rating for an entry  |
-| `delete` | Remove an entry                                  |
-| `refresh`| Re-fetch totals for entries with unknown (`?`) counts |
-| `clear`  | Clear the terminal                               |
-| `exit`   | Save and quit                                    |
+| Command | Description |
+| --- | --- |
+| `list` | Show all entries sorted alphabetically |
+| `add` | Search and add a new entry |
+| `update` | Update progress, status, or rating for an entry |
+| `delete` | Remove an entry |
+| `refresh` | Re-fetch totals for entries with unknown (`?`) counts |
+| `clear` | Clear the terminal |
+| `exit` | Save and quit |
 
 ### Statuses
 
 `Planning` → `Watching` / `Reading` → `On-Hold` → `Dropped` → `Completed`
 
-Status is auto-managed based on progress but will never be downgraded automatically. The only forced override is `Completed` when progress hits the total.
+Status is auto-managed based on progress but will never be downgraded automatically. The only forced override is `Completed` when progress hits the total volume.
 
 ---
 
 ## Data Storage
 
-All data is stored locally in `~/.chiro/`:
+All configuration files and lists are saved locally within the main project root directory:
 
 ```
-~/.chiro/
-├── config.json     # API keys
-├── anime.json
-├── manga.json
-├── tv.json
-└── movies.json
+chiro-cli/
+├── config.json      # API keys
+├── anime_list.json
+├── manga_list.json
+├── tv_list.json
+└── movie_list.json
+
 ```
 
 ---
 
 ## Notes
 
-- **TV totals** reflect the full series episode count across all seasons (sourced from TMDB). If you prefer to track season-by-season, update the total manually via the `update` command.
-- Anime and manga data is sourced from [MyAnimeList](https://myanimelist.net/) via the Jikan API. Results are based on the closest title match.
+* **TV totals** reflect the full series episode count across all seasons (sourced from TMDB). If you prefer to track season-by-season, update the total manually via the `update` command.
+* Anime and manga data is sourced from [MyAnimeList](https://myanimelist.net/) via the Jikan API. Results are based on the closest title match.
 
 ---
 
 ## License
 
 MIT
+
+```
+
+```
