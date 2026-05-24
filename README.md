@@ -1,7 +1,7 @@
 
 # chiro
 
-A minimal terminal-based tracker for anime, manga, TV shows, and movies.
+A minimal terminal-based tracker for Anime, Manga, TV Shows, and Movies.
 
 
 ```
